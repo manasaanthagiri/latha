@@ -1,5 +1,5 @@
 ## crop.py
-
+```
 import os
 import csv
 from PIL import Image, ImageDraw
@@ -49,10 +49,10 @@ with open(csv_file, 'r') as file:
             cropped_img.save(os.path.join(output_dir, f"{i}_{image_name}"))  
         full_image_with_boxes = draw_boxes(image, boxes)
         full_image_with_boxes.save(os.path.join(output_dir, f"full_{image_name}"))
-
+```
 
 ## histo.py
-
+```
 import numpy as np
 import cv2 as cv
 from matplotlib import pyplot as plt
@@ -66,21 +66,21 @@ for i,col in enumerate(color):
  plt.plot(histr,color = col)
  plt.xlim([0,256])
 plt.show()
-
+```
 
 ## iterate.py
 
-
+```
 num = list(range(10))
 previousNum = 0
 for i in num:
     sum = previousNum + i
     print('Current Number '+ str(i) + 'Previous Number ' + str(previousNum) + 'is ' + str(sum)) # <- This is the issue.
     previousNum=i
-
+```
 
 ## video.py
-
+```
 # import the opencv library 
 import cv2 
   
@@ -106,5 +106,5 @@ while(True):
 # After the loop release the cap object 
 vid.release() 
 # Destroy all the windows 
-
+```
 
