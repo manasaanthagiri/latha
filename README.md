@@ -5,10 +5,10 @@ import csv
 from PIL import Image, ImageDraw
 
 
-csv_file = "/home/afreen-mohammad/Downloads/7622202030987_bounding_box.csv"
-image_dir = "/home/afreen-mohammad/Downloads/7622202030987/"
-output_dir = "/home/afreen-mohammad/Downloads/7622202030987/_with_boxes"
-``
+csv_file = "/home/manasa-anthagiri/Downloads/7622202030987_bounding_box.csv"
+image_dir = "/home/manasa-anthagiri/Downloads/7622202030987"
+output_dir = "/home/manasa-anthagiri/Downloads/7622202030987_with_boxes"
+
 
 os.makedirs(output_dir, exist_ok=True)
 
@@ -50,15 +50,15 @@ with open(csv_file, 'r') as file:
         full_image_with_boxes = draw_boxes(image, boxes)
         full_image_with_boxes.save(os.path.join(output_dir, f"full_{image_name}"))
 
-## histo.py
 
+## histo.py
 
 import numpy as np
 import cv2 as cv
 from matplotlib import pyplot as plt
  
-img = cv.imread("/home/afreen-mohammad/Downloads/flowers.jpeg")
-cv.imwrite("/home/afreen-mohammad/Downloads/__pycache__/sana.jpg",img)
+img = cv.imread('/home/manasa-anthagiri/teddy.jpg')
+cv.imwrite("/home/manasa-anthagiri/Desktop/manasa/graph.png",img)
 assert img is not None, "file could not be read, check with os.path.exists()"
 color = ('b','g','r')
 for i,col in enumerate(color):
@@ -80,8 +80,6 @@ for i in num:
 
 
 ## video.py
-
-
 
 # import the opencv library 
 import cv2 
@@ -108,4 +106,5 @@ while(True):
 # After the loop release the cap object 
 vid.release() 
 # Destroy all the windows 
-cv2.destroyAllWindows() 
+
+
