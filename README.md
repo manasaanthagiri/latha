@@ -84,6 +84,10 @@ from matplotlib import pyplot as plt
  ```
  img = cv.imread('/home/manasa-anthagiri/teddy.jpg')
 ```
+
+![graph](https://github.com/manasaanthagiri/latha/assets/169051455/0c3a4661-8812-4e44-80c5-c521b4e223f0)
+
+
    This line states that read the image file named "teddy.jpg" located at the specified path /home/manasa-anthagiri/teddy.jpg by using opencv library
    ```
 cv.imwrite("/home/manasa-anthagiri/Desktop/manasa/graph.png",img)
