@@ -1,4 +1,8 @@
 ## crop.py
+
+![image](https://github.com/manasaanthagiri/latha/assets/169051455/7cef5eea-bb6a-4195-a7cc-84db6c97c601)
+
+
 # Library used in it #
 ```
 import os
