@@ -85,7 +85,6 @@ from matplotlib import pyplot as plt
  img = cv.imread('/home/manasa-anthagiri/teddy.jpg')
 ```
 
-![graph](https://github.com/manasaanthagiri/latha/assets/169051455/0c3a4661-8812-4e44-80c5-c521b4e223f0)
 
 
    This line states that read the image file named "teddy.jpg" located at the specified path /home/manasa-anthagiri/teddy.jpg by using opencv library
@@ -120,7 +119,11 @@ plt.xlim([0,256])
 plt.show()
 ```
 This command is used to display the plot that has been created using Matplotlib's plotting functions.
-```
+
+
+![RGB](https://github.com/manasaanthagiri/latha/assets/169051455/1218b532-b612-402f-8726-25a89801e9e7)
+
+
 
 # iterate.py #
 
