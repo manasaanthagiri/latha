@@ -62,10 +62,8 @@ with open(csv_file, 'r') as file:
 
 # HISTOGRAM #
 A histogram is the graphical representation of data where data is grouped into continuous number ranges and each range corresponds to a vertical bar.
-
-    The horizontal axis displays the number range.
-    The vertical axis (frequency) represents the amount of data that is present in each range.
-
+The horizontal axis displays the number range.
+The vertical axis (frequency) represents the amount of data that is present in each range.
 The number ranges depend upon the data that is being used.
 
 # Library used in it #
@@ -87,53 +85,67 @@ from matplotlib import pyplot as plt
  img = cv.imread('/home/manasa-anthagiri/teddy.jpg')
 ```
    This line states that read the image file named "teddy.jpg" located at the specified path /home/manasa-anthagiri/teddy.jpg by using opencv library
-   
-# cv.imwrite("/home/manasa-anthagiri/Desktop/manasa/graph.png",img)
+   ```
+cv.imwrite("/home/manasa-anthagiri/Desktop/manasa/graph.png",img)
+```
  This line states that it will store the image using open cv function in specified folder.
- 
- # assert img is not None, "file could not be read, check with os.path.exists()" 
- 
-# color = ('b','g','r')
+ ```
+assert img is not None, "file could not be read, check with os.path.exists()"
+```
+ ```
+color = ('b','g','r')
+```
 Each character represents a color channel: 'b' for blue, 'g' for green, and 'r' for red
-
-# for i,col in enumerate(color):
+```
+for i,col in enumerate(color):
+```
 The enumerate() function takes a collection (e.g. a tuple) and returns it as an enumerate object. col will represent the color ('b', 'g', or 'r').
-
- # histr = cv.calcHist([img],[i],None,[256],[0,256])
+```
+ histr = cv.calcHist([img],[i],None,[256],[0,256])
+```
  the cv2.calcHist() function to calculate the image histograms.It also calculate color channels (blue, green, and red) of the image.
- 
- # plt.plot(histr,color = col)
+ ```
+plt.plot(histr,color = col)
+```
  This command plots the histogram data.
- 
- # plt.xlim([0,256])
+ ```
+plt.xlim([0,256])
+```
  This function is used to set the limits for the x-axis of the plot.
- 
-# plt.show()
+ ```
+plt.show()
+```
 This command is used to display the plot that has been created using Matplotlib's plotting functions.
 ```
 
-## iterate.py
+# iterate.py #
+
+# Iteration
 Iteration is the process of repeating a set of operations or steps.The essence of iteration is cyclical in nature
 
 ```
-# num = list(range(10))
+num = list(range(10))
+```
 This line creates a list of numbers from first 10 integers
-
-# previousNum = 0
+```
+previousNum = 0
+```
 The line seems as previousNum starts with the value of 0.
-
+```
 for i in num:
     sum = previousNum + i
+    ```
     It calculates the sum of the current value i and the previous value stored in the  previousNum.
-    
+    ```
     print('Current Number '+ str(i) + 'Previous Number ' + str(previousNum) + 'is ' + str(sum)) # <- This is the issue.
     previousNum=i
+    ```
     printing out the current number (i), the previous number (previousNum), and their sum (sum).
-```
+
 
 ## video.py
 ```
-# import the opencv library 
+import the opencv library 
 import cv2 
   
   
