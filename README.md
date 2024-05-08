@@ -1,25 +1,30 @@
 ## crop.py
 # Library used in it #
-import os
-import os is a Python statement that imports the os module, which provides a way to interact with the operating system.
-import csv
-A CSV is a comma-separated values file, which allows data to be saved in a tabular format
-from PIL import Image, ImageDraw
- PIL is an additional, free, open-source library for the Python programming language that provides support for opening, manipulating, and saving many different image file formats.
 ```
 import os
+```
+import os is a Python statement that imports the os module, which provides a way to interact with the operating system.
+
+```
 import csv
+```
+A CSV is a comma-separated values file, which allows data to be saved in a tabular format.
+
+```
 from PIL import Image, ImageDraw
+```
+ PIL is an additional, free, open-source library for the Python programming language that provides support for opening, manipulating, and saving many different image file formats.
 
-
+```
 csv_file = "/home/manasa-anthagiri/Downloads/7622202030987_bounding_box.csv"
 image_dir = "/home/manasa-anthagiri/Downloads/7622202030987"
 output_dir = "/home/manasa-anthagiri/Downloads/7622202030987_with_boxes"
+```
 
 
 os.makedirs(output_dir, exist_ok=True)
 
-
+```
 def draw_boxes(image, boxes):
     draw = ImageDraw.Draw(image)
     for box in boxes:
@@ -29,8 +34,11 @@ def draw_boxes(image, boxes):
         bottom = int(box['bottom'])
         draw.rectangle([left, top, right, bottom], outline="red")
     return image
+```
+This functions takes an image and a list of bounding boxes as input and draws rectangles around the objects specified by the bounding boxes.
+It useful for visualizing bounding boxes on images, which is common in object detection
 
-
+```
 def crop_image(image, boxes):
     cropped_images = []
     for box in boxes:
@@ -41,8 +49,10 @@ def crop_image(image, boxes):
         cropped_img = image.crop((left, top, right, bottom))
         cropped_images.append(cropped_img)
     return cropped_images
+```
+This function, crop_image, takes an image and crops the image based on the bounding box coordinates. It returns a list of cropped images.
 
-
+```
 with open(csv_file, 'r') as file:
     csv_reader = csv.DictReader(file)
     for row in csv_reader:
@@ -57,7 +67,10 @@ with open(csv_file, 'r') as file:
         full_image_with_boxes = draw_boxes(image, boxes)
         full_image_with_boxes.save(os.path.join(output_dir, f"full_{image_name}"))
 ```
+ From a CSV file containing bounding box, images crops them based on the bounding box coordinates.
+ Their bounding box  from the CSV file and saves the cropped images and images with bounding boxes drawn in the specified output directory.
 
+ 
 ## histo.py
 
 # HISTOGRAM #
@@ -156,28 +169,42 @@ for i in num:
 ```
 import the opencv library 
 import cv2 
-  
-  
-# define a video capture object 
+```
+  This statement imports the entire OpenCV library and its functions.
+
+```  
+    # define a video capture object 
 vid = cv2.VideoCapture(0) 
-  
+```
+ This line of code creates a VideoCapture object named vid. After executing this line,obj ready to capture video frames
+
+```
 while(True): 
       
     # Capture the video frame 
     # by frame 
     ret, frame = vid.read() 
-  
+  ```
+  this lines capture a frame from the video stream using the VideoCapture object .This method reads a single frame from the video capture.
+
+```
     # Display the resulting frame 
     cv2.imshow('frame', frame) 
-      
+    ```
+    This line of code displays the captured frame.
+    
+     ``` 
     # the 'q' button is set as the 
     # quitting button you may use any 
     # desired button of your choice 
     if cv2.waitKey(1) & 0xFF == ord('q'): 
         break
-  
+        ```
+        These lines of code wait for a key press after displaying the frame.
+
+  ```
 # After the loop release the cap object 
 vid.release() 
 # Destroy all the windows 
 ```
-
+This function closes all OpenCV windows, useful for cleaning up after displaying frames.
