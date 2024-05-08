@@ -75,6 +75,9 @@ with open(csv_file, 'r') as file:
  Their bounding box  from the CSV file and saves the cropped images and images with bounding boxes drawn in the specified output directory.
 
  
+![image](https://github.com/manasaanthagiri/latha/assets/169051455/df8aee4d-6449-4a4e-9189-ec37e7b2ca8d)
+
+ 
 ## histo.py
 
 # HISTOGRAM #
