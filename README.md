@@ -1,4 +1,39 @@
 ## crop.py
+# Library used in it #
+import os
+import os is a Python statement that imports the os module, which provides a way to interact with the operating system.
+import csv
+A CSV is a comma-separated values file, which allows data to be saved in a tabular format
+from PIL import Image, ImageDraw
+ PIL is an additional, free, open-source library for the Python programming language that provides support for opening, manipulating, and saving many different image file formats.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ```
 import os
 import csv
