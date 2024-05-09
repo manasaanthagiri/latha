@@ -254,3 +254,8 @@ vs.release()
 cv2.destroyAllWindows()
 ```
 'Writes' will resized frame to the output video file.
+
+
+https://github.com/manasaanthagiri/latha/assets/169051455/db26194b-90dd-4b04-a7ac-984b753835c5
+
+
