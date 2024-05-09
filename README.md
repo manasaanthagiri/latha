@@ -185,46 +185,68 @@ Current Number 8Previous Number 7is 15
 Current Number 9Previous Number 8is 17
 
 
-## video.py
+## frame.py
+
+libraries
+
 ```
-import the opencv library 
+import imutils 
 import cv2 
 ```
-  This statement imports the entire OpenCV library and its functions.
-
-```  
-    # define a video capture object 
-vid = cv2.VideoCapture(0) 
-```
- This line of code creates a VideoCapture object named vid. After executing this line,obj ready to capture video frames
+imutils library is performing basic image task ,cv2 widely used library for computer vision tasks such as image and video processing.
 
 ```
-while(True): 
-      
-    # Capture the video frame 
-    # by frame 
-    ret, frame = vid.read() 
-  ```
-  this lines capture a frame from the video stream using the VideoCapture object .This method reads a single frame from the video capture.
-
-```
-    # Display the resulting frame 
-    cv2.imshow('frame', frame) 
+video = ""
+result_path = "result_video.avi"
+if video == "":
+    print("[webcam start]")
+    vs = cv2.VideoCapture(0)
     ```
-    This line of code displays the captured frame.
-    
-     ``` 
-    # the 'q' button is set as the 
-    # quitting button you may use any 
-    # desired button of your choice 
-    if cv2.waitKey(1) & 0xFF == ord('q'): 
-        break
-        ```
-        These lines of code wait for a key press after displaying the frame.
+   These line of code excute initializing a video capture object from the webcam using OpenCV.
 
-  ```
-# After the loop release the cap object 
-vid.release() 
-# Destroy all the windows 
 ```
-This function closes all OpenCV windows, useful for cleaning up after displaying frames.
+else:
+    print("[video start]")
+    vs = cv2.VideoCapture(video)
+
+writer = None
+```
+it starts capturing frames from that video.
+
+```
+while True:
+    ret, frame = vs.read()
+
+    if frame is None:
+        break
+
+    frame = imutils.resize(frame, width=320, height=240)
+```
+It will continuous loop to capture frames from the video source .It reads a frame from the video capture object.
+
+```
+    cv2.imshow("frame", frame)
+
+    key = cv2.waitKey(1) & 0xFF
+    if key == ord("q"):
+        break
+```
+ChatGPT
+
+This code displays the resized frame using cv2.imshow().if the key "q" pressed, it breaks out of the loop.
+
+```                                    
+    if writer is None:
+        fourcc = cv2.VideoWriter_fourcc(*"MJPG")
+        writer = cv2.VideoWriter(result_path, fourcc, 25, (frame.shape[1], frame.shape[0]), True)
+```
+VideoWriter object for saving the processed frames into a video file. 'True' Indicates whether to use color (True) or grayscale (False) for the output video.
+
+```
+    if writer is not None:
+        writer.write(frame)
+
+vs.release()
+cv2.destroyAllWindows()
+```
+'Writes' will resized frame to the output video file.
