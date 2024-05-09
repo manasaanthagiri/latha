@@ -187,12 +187,13 @@ Current Number 9Previous Number 8is 17
 
 ## frame.py
 
-libraries
+## libraries
 
 ```
 import imutils 
 import cv2 
 ```
+
 imutils library is performing basic image task ,cv2 widely used library for computer vision tasks such as image and video processing.
 
 ```
@@ -202,6 +203,7 @@ if video == "":
     print("[webcam start]")
     vs = cv2.VideoCapture(0)
     ```
+    
    These line of code excute initializing a video capture object from the webcam using OpenCV.
 
 ```
@@ -211,6 +213,7 @@ else:
 
 writer = None
 ```
+
 it starts capturing frames from that video.
 
 ```
@@ -222,6 +225,7 @@ while True:
 
     frame = imutils.resize(frame, width=320, height=240)
 ```
+
 It will continuous loop to capture frames from the video source .It reads a frame from the video capture object.
 
 ```
@@ -231,7 +235,6 @@ It will continuous loop to capture frames from the video source .It reads a fram
     if key == ord("q"):
         break
 ```
-ChatGPT
 
 This code displays the resized frame using cv2.imshow().if the key "q" pressed, it breaks out of the loop.
 
@@ -240,6 +243,7 @@ This code displays the resized frame using cv2.imshow().if the key "q" pressed, 
         fourcc = cv2.VideoWriter_fourcc(*"MJPG")
         writer = cv2.VideoWriter(result_path, fourcc, 25, (frame.shape[1], frame.shape[0]), True)
 ```
+
 VideoWriter object for saving the processed frames into a video file. 'True' Indicates whether to use color (True) or grayscale (False) for the output video.
 
 ```
